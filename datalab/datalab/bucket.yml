@@ -3,6 +3,7 @@ flows:
   004c59ba-61c9-449b-98ee-e2ccf6e84818: {ver: 2, file: S3_To_S3.snapshot}
   b2b2d385-9ddf-4714-ba2a-e44825b7038e: {ver: 4, file: DynamicSQL_With_CDC.snapshot}
   ee2a6a89-a3d4-4237-9f14-88ed7f94c73a: {ver: 1, file: Spark-Connector_Test.snapshot}
+  49704097-e944-4868-bee3-db54c9355d64: {ver: 2, file: File_Decryption.snapshot}
   c050dc72-8282-49b8-b39d-841a367762a9: {ver: 1, file: MRO.snapshot}
   9fff17c9-0e35-471b-abbd-73e6ee3f62f7: {ver: 3, file: NiFi_Hive.snapshot}
 layoutVer: 1

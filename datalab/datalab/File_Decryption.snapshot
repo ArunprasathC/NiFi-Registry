@@ -1,0 +1,839 @@
+{
+  "header" : {
+    "dataModelVersion" : "2"
+  },
+  "content" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "b339de36-be8e-3814-9243-52c4a5feae02",
+        "id" : "1809cdcc-a760-3ee0-a2ab-d54432325ea0",
+        "name" : "PutS3Object",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+      "identifier" : "087841b6-7255-3f24-97cc-4b049cb50d9e",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "b339de36-be8e-3814-9243-52c4a5feae02",
+        "id" : "aedde874-6ea8-380f-b2fe-d3b0269a95cf",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "b339de36-be8e-3814-9243-52c4a5feae02",
+        "id" : "af6acb52-cd2c-328a-8962-91594f09f43e",
+        "name" : "FetchS3Object",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+      "identifier" : "7b46f5b5-882e-3906-b62c-4823e7b08a9a",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "b339de36-be8e-3814-9243-52c4a5feae02",
+        "id" : "f81bfcec-f313-304c-9d62-860b140b25e9",
+        "name" : "ListS3",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "Open SLL Algorithm used for decryption",
+        "groupId" : "b339de36-be8e-3814-9243-52c4a5feae02",
+        "id" : "2b2f0bec-b072-3ba8-8962-441f11278bf1",
+        "name" : "DecryptContent",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+      "identifier" : "35802b1d-3ebb-3d47-9977-0bc467bad7be",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "b339de36-be8e-3814-9243-52c4a5feae02",
+        "id" : "af6acb52-cd2c-328a-8962-91594f09f43e",
+        "name" : "FetchS3Object",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "b339de36-be8e-3814-9243-52c4a5feae02",
+        "id" : "aedde874-6ea8-380f-b2fe-d3b0269a95cf",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+      "identifier" : "17b66295-f81b-3472-8307-e56f0fcb871d",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "Open SLL Algorithm used for decryption",
+        "groupId" : "b339de36-be8e-3814-9243-52c4a5feae02",
+        "id" : "2b2f0bec-b072-3ba8-8962-441f11278bf1",
+        "name" : "DecryptContent",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ ],
+    "funnels" : [ ],
+    "identifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "name" : "File_Decryption",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : 1119.2457181027519,
+      "y" : 328.7122859051376
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-aws-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+      "identifier" : "af6acb52-cd2c-328a-8962-91594f09f43e",
+      "name" : "FetchS3Object",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 401.47998812267474,
+        "y" : 284.80001603466866
+      },
+      "properties" : {
+        "Object Key" : "${filename}",
+        "Signer Override" : "Default Signature",
+        "Bucket" : "${v_S3_Source_Bucket}",
+        "Communications Timeout" : "30 secs",
+        "Region" : "eu-west-1"
+      },
+      "propertyDescriptors" : {
+        "Proxy Host" : {
+          "displayName" : "Proxy Host",
+          "identifiesControllerService" : false,
+          "name" : "Proxy Host",
+          "sensitive" : false
+        },
+        "Access Key" : {
+          "displayName" : "Access Key",
+          "identifiesControllerService" : false,
+          "name" : "Access Key",
+          "sensitive" : false
+        },
+        "proxy-configuration-service" : {
+          "displayName" : "Proxy Configuration Service",
+          "identifiesControllerService" : true,
+          "name" : "proxy-configuration-service",
+          "sensitive" : false
+        },
+        "Endpoint Override URL" : {
+          "displayName" : "Endpoint Override URL",
+          "identifiesControllerService" : false,
+          "name" : "Endpoint Override URL",
+          "sensitive" : false
+        },
+        "Object Key" : {
+          "displayName" : "Object Key",
+          "identifiesControllerService" : false,
+          "name" : "Object Key",
+          "sensitive" : false
+        },
+        "AWS Credentials Provider service" : {
+          "displayName" : "AWS Credentials Provider service",
+          "identifiesControllerService" : true,
+          "name" : "AWS Credentials Provider service",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Signer Override" : {
+          "displayName" : "Signer Override",
+          "identifiesControllerService" : false,
+          "name" : "Signer Override",
+          "sensitive" : false
+        },
+        "Bucket" : {
+          "displayName" : "Bucket",
+          "identifiesControllerService" : false,
+          "name" : "Bucket",
+          "sensitive" : false
+        },
+        "Version" : {
+          "displayName" : "Version",
+          "identifiesControllerService" : false,
+          "name" : "Version",
+          "sensitive" : false
+        },
+        "proxy-user-password" : {
+          "displayName" : "Proxy Password",
+          "identifiesControllerService" : false,
+          "name" : "proxy-user-password",
+          "sensitive" : false
+        },
+        "Communications Timeout" : {
+          "displayName" : "Communications Timeout",
+          "identifiesControllerService" : false,
+          "name" : "Communications Timeout",
+          "sensitive" : false
+        },
+        "Region" : {
+          "displayName" : "Region",
+          "identifiesControllerService" : false,
+          "name" : "Region",
+          "sensitive" : false
+        },
+        "Secret Key" : {
+          "displayName" : "Secret Key",
+          "identifiesControllerService" : false,
+          "name" : "Secret Key",
+          "sensitive" : false
+        },
+        "Credentials File" : {
+          "displayName" : "Credentials File",
+          "identifiesControllerService" : false,
+          "name" : "Credentials File",
+          "sensitive" : false
+        },
+        "proxy-user-name" : {
+          "displayName" : "Proxy Username",
+          "identifiesControllerService" : false,
+          "name" : "proxy-user-name",
+          "sensitive" : false
+        },
+        "Proxy Host Port" : {
+          "displayName" : "Proxy Host Port",
+          "identifiesControllerService" : false,
+          "name" : "Proxy Host Port",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.aws.s3.FetchS3Object",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-aws-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+      "identifier" : "1809cdcc-a760-3ee0-a2ab-d54432325ea0",
+      "name" : "PutS3Object",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1258.2522049195497,
+        "y" : 626.2160316596687
+      },
+      "properties" : {
+        "FullControl User List" : "${s3.permissions.full.users}",
+        "Owner" : "${s3.owner}",
+        "s3-object-remove-tags-prefix" : "false",
+        "Multipart Upload Max Age Threshold" : "7 days",
+        "canned-acl" : "${s3.permissions.cannedacl}",
+        "Signer Override" : "Default Signature",
+        "Write ACL User List" : "${s3.permissions.writeacl.users}",
+        "server-side-encryption" : "None",
+        "Read ACL User List" : "${s3.permissions.readacl.users}",
+        "Storage Class" : "Standard",
+        "Multipart Part Size" : "5 GB",
+        "Object Key" : "${v_Target_S3_Folder}${filename}",
+        "Multipart Threshold" : "5 GB",
+        "Bucket" : "${v_S3_Target_Bucket}",
+        "Multipart Upload AgeOff Interval" : "60 min",
+        "Write Permission User List" : "${s3.permissions.write.users}",
+        "Communications Timeout" : "30 secs",
+        "Region" : "eu-west-1",
+        "Read Permission User List" : "${s3.permissions.read.users}"
+      },
+      "propertyDescriptors" : {
+        "Proxy Host" : {
+          "displayName" : "Proxy Host",
+          "identifiesControllerService" : false,
+          "name" : "Proxy Host",
+          "sensitive" : false
+        },
+        "FullControl User List" : {
+          "displayName" : "FullControl User List",
+          "identifiesControllerService" : false,
+          "name" : "FullControl User List",
+          "sensitive" : false
+        },
+        "Owner" : {
+          "displayName" : "Owner",
+          "identifiesControllerService" : false,
+          "name" : "Owner",
+          "sensitive" : false
+        },
+        "Access Key" : {
+          "displayName" : "Access Key",
+          "identifiesControllerService" : false,
+          "name" : "Access Key",
+          "sensitive" : false
+        },
+        "proxy-configuration-service" : {
+          "displayName" : "Proxy Configuration Service",
+          "identifiesControllerService" : true,
+          "name" : "proxy-configuration-service",
+          "sensitive" : false
+        },
+        "s3-object-remove-tags-prefix" : {
+          "displayName" : "Remove Tag Prefix",
+          "identifiesControllerService" : false,
+          "name" : "s3-object-remove-tags-prefix",
+          "sensitive" : false
+        },
+        "Endpoint Override URL" : {
+          "displayName" : "Endpoint Override URL",
+          "identifiesControllerService" : false,
+          "name" : "Endpoint Override URL",
+          "sensitive" : false
+        },
+        "Multipart Upload Max Age Threshold" : {
+          "displayName" : "Multipart Upload Max Age Threshold",
+          "identifiesControllerService" : false,
+          "name" : "Multipart Upload Max Age Threshold",
+          "sensitive" : false
+        },
+        "canned-acl" : {
+          "displayName" : "Canned ACL",
+          "identifiesControllerService" : false,
+          "name" : "canned-acl",
+          "sensitive" : false
+        },
+        "Signer Override" : {
+          "displayName" : "Signer Override",
+          "identifiesControllerService" : false,
+          "name" : "Signer Override",
+          "sensitive" : false
+        },
+        "proxy-user-password" : {
+          "displayName" : "Proxy Password",
+          "identifiesControllerService" : false,
+          "name" : "proxy-user-password",
+          "sensitive" : false
+        },
+        "Content Type" : {
+          "displayName" : "Content Type",
+          "identifiesControllerService" : false,
+          "name" : "Content Type",
+          "sensitive" : false
+        },
+        "Secret Key" : {
+          "displayName" : "Secret Key",
+          "identifiesControllerService" : false,
+          "name" : "Secret Key",
+          "sensitive" : false
+        },
+        "Write ACL User List" : {
+          "displayName" : "Write ACL User List",
+          "identifiesControllerService" : false,
+          "name" : "Write ACL User List",
+          "sensitive" : false
+        },
+        "server-side-encryption" : {
+          "displayName" : "Server Side Encryption",
+          "identifiesControllerService" : false,
+          "name" : "server-side-encryption",
+          "sensitive" : false
+        },
+        "Read ACL User List" : {
+          "displayName" : "Read ACL User List",
+          "identifiesControllerService" : false,
+          "name" : "Read ACL User List",
+          "sensitive" : false
+        },
+        "Storage Class" : {
+          "displayName" : "Storage Class",
+          "identifiesControllerService" : false,
+          "name" : "Storage Class",
+          "sensitive" : false
+        },
+        "Multipart Part Size" : {
+          "displayName" : "Multipart Part Size",
+          "identifiesControllerService" : false,
+          "name" : "Multipart Part Size",
+          "sensitive" : false
+        },
+        "Object Key" : {
+          "displayName" : "Object Key",
+          "identifiesControllerService" : false,
+          "name" : "Object Key",
+          "sensitive" : false
+        },
+        "AWS Credentials Provider service" : {
+          "displayName" : "AWS Credentials Provider service",
+          "identifiesControllerService" : true,
+          "name" : "AWS Credentials Provider service",
+          "sensitive" : false
+        },
+        "Multipart Threshold" : {
+          "displayName" : "Multipart Threshold",
+          "identifiesControllerService" : false,
+          "name" : "Multipart Threshold",
+          "sensitive" : false
+        },
+        "s3-object-tags-prefix" : {
+          "displayName" : "Object Tags Prefix",
+          "identifiesControllerService" : false,
+          "name" : "s3-object-tags-prefix",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Bucket" : {
+          "displayName" : "Bucket",
+          "identifiesControllerService" : false,
+          "name" : "Bucket",
+          "sensitive" : false
+        },
+        "Multipart Upload AgeOff Interval" : {
+          "displayName" : "Multipart Upload AgeOff Interval",
+          "identifiesControllerService" : false,
+          "name" : "Multipart Upload AgeOff Interval",
+          "sensitive" : false
+        },
+        "Write Permission User List" : {
+          "displayName" : "Write Permission User List",
+          "identifiesControllerService" : false,
+          "name" : "Write Permission User List",
+          "sensitive" : false
+        },
+        "Communications Timeout" : {
+          "displayName" : "Communications Timeout",
+          "identifiesControllerService" : false,
+          "name" : "Communications Timeout",
+          "sensitive" : false
+        },
+        "Credentials File" : {
+          "displayName" : "Credentials File",
+          "identifiesControllerService" : false,
+          "name" : "Credentials File",
+          "sensitive" : false
+        },
+        "Region" : {
+          "displayName" : "Region",
+          "identifiesControllerService" : false,
+          "name" : "Region",
+          "sensitive" : false
+        },
+        "Read Permission User List" : {
+          "displayName" : "Read Permission User List",
+          "identifiesControllerService" : false,
+          "name" : "Read Permission User List",
+          "sensitive" : false
+        },
+        "Expiration Time Rule" : {
+          "displayName" : "Expiration Time Rule",
+          "identifiesControllerService" : false,
+          "name" : "Expiration Time Rule",
+          "sensitive" : false
+        },
+        "proxy-user-name" : {
+          "displayName" : "Proxy Username",
+          "identifiesControllerService" : false,
+          "name" : "proxy-user-name",
+          "sensitive" : false
+        },
+        "Proxy Host Port" : {
+          "displayName" : "Proxy Host Port",
+          "identifiesControllerService" : false,
+          "name" : "Proxy Host Port",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.aws.s3.PutS3Object",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "Open SLL Algorithm used for decryption",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+      "identifier" : "2b2f0bec-b072-3ba8-8962-441f11278bf1",
+      "name" : "DecryptContent",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 958.0000024167819,
+        "y" : 40.00001319852123
+      },
+      "properties" : {
+        "Mode" : "Decrypt",
+        "key-derivation-function" : "OPENSSL_EVP_BYTES_TO_KEY",
+        "allow-weak-crypto" : "not-allowed",
+        "Encryption Algorithm" : "MD5_128AES"
+      },
+      "propertyDescriptors" : {
+        "private-keyring-passphrase" : {
+          "displayName" : "Private Keyring Passphrase",
+          "identifiesControllerService" : false,
+          "name" : "private-keyring-passphrase",
+          "sensitive" : false
+        },
+        "Mode" : {
+          "displayName" : "Mode",
+          "identifiesControllerService" : false,
+          "name" : "Mode",
+          "sensitive" : false
+        },
+        "key-derivation-function" : {
+          "displayName" : "Key Derivation Function",
+          "identifiesControllerService" : false,
+          "name" : "key-derivation-function",
+          "sensitive" : false
+        },
+        "public-key-user-id" : {
+          "displayName" : "Public Key User Id",
+          "identifiesControllerService" : false,
+          "name" : "public-key-user-id",
+          "sensitive" : false
+        },
+        "public-keyring-file" : {
+          "displayName" : "Public Keyring File",
+          "identifiesControllerService" : false,
+          "name" : "public-keyring-file",
+          "sensitive" : false
+        },
+        "raw-key-hex" : {
+          "displayName" : "Raw Key (hexadecimal)",
+          "identifiesControllerService" : false,
+          "name" : "raw-key-hex",
+          "sensitive" : false
+        },
+        "allow-weak-crypto" : {
+          "displayName" : "Allow insecure cryptographic modes",
+          "identifiesControllerService" : false,
+          "name" : "allow-weak-crypto",
+          "sensitive" : false
+        },
+        "private-keyring-file" : {
+          "displayName" : "Private Keyring File",
+          "identifiesControllerService" : false,
+          "name" : "private-keyring-file",
+          "sensitive" : false
+        },
+        "Encryption Algorithm" : {
+          "displayName" : "Encryption Algorithm",
+          "identifiesControllerService" : false,
+          "name" : "Encryption Algorithm",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.EncryptContent",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+      "identifier" : "aedde874-6ea8-380f-b2fe-d3b0269a95cf",
+      "name" : "UpdateAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 956.9999995675489,
+        "y" : 300.0000071682881
+      },
+      "properties" : {
+        "filename" : "${filename}_Decrypted",
+        "Store State" : "Do not store state"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "filename" : {
+          "displayName" : "filename",
+          "identifiesControllerService" : false,
+          "name" : "filename",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-aws-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "PRIMARY",
+      "groupIdentifier" : "b339de36-be8e-3814-9243-52c4a5feae02",
+      "identifier" : "f81bfcec-f313-304c-9d62-860b140b25e9",
+      "name" : "ListS3",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 149.40003206798724,
+        "y" : -3.759996782714154
+      },
+      "properties" : {
+        "list-type" : "1",
+        "prefix" : "${v_Source_S3_Folder}",
+        "write-s3-object-tags" : "false",
+        "Signer Override" : "Default Signature",
+        "Bucket" : "${v_S3_Source_Bucket}",
+        "Communications Timeout" : "30 secs",
+        "Region" : "eu-west-1",
+        "min-age" : "0 sec",
+        "use-versions" : "false"
+      },
+      "propertyDescriptors" : {
+        "Proxy Host" : {
+          "displayName" : "Proxy Host",
+          "identifiesControllerService" : false,
+          "name" : "Proxy Host",
+          "sensitive" : false
+        },
+        "list-type" : {
+          "displayName" : "List Type",
+          "identifiesControllerService" : false,
+          "name" : "list-type",
+          "sensitive" : false
+        },
+        "Access Key" : {
+          "displayName" : "Access Key",
+          "identifiesControllerService" : false,
+          "name" : "Access Key",
+          "sensitive" : false
+        },
+        "prefix" : {
+          "displayName" : "Prefix",
+          "identifiesControllerService" : false,
+          "name" : "prefix",
+          "sensitive" : false
+        },
+        "proxy-configuration-service" : {
+          "displayName" : "Proxy Configuration Service",
+          "identifiesControllerService" : true,
+          "name" : "proxy-configuration-service",
+          "sensitive" : false
+        },
+        "Endpoint Override URL" : {
+          "displayName" : "Endpoint Override URL",
+          "identifiesControllerService" : false,
+          "name" : "Endpoint Override URL",
+          "sensitive" : false
+        },
+        "AWS Credentials Provider service" : {
+          "displayName" : "AWS Credentials Provider service",
+          "identifiesControllerService" : true,
+          "name" : "AWS Credentials Provider service",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "write-s3-object-tags" : {
+          "displayName" : "Write Object Tags",
+          "identifiesControllerService" : false,
+          "name" : "write-s3-object-tags",
+          "sensitive" : false
+        },
+        "Signer Override" : {
+          "displayName" : "Signer Override",
+          "identifiesControllerService" : false,
+          "name" : "Signer Override",
+          "sensitive" : false
+        },
+        "Bucket" : {
+          "displayName" : "Bucket",
+          "identifiesControllerService" : false,
+          "name" : "Bucket",
+          "sensitive" : false
+        },
+        "delimiter" : {
+          "displayName" : "Delimiter",
+          "identifiesControllerService" : false,
+          "name" : "delimiter",
+          "sensitive" : false
+        },
+        "proxy-user-password" : {
+          "displayName" : "Proxy Password",
+          "identifiesControllerService" : false,
+          "name" : "proxy-user-password",
+          "sensitive" : false
+        },
+        "Communications Timeout" : {
+          "displayName" : "Communications Timeout",
+          "identifiesControllerService" : false,
+          "name" : "Communications Timeout",
+          "sensitive" : false
+        },
+        "Region" : {
+          "displayName" : "Region",
+          "identifiesControllerService" : false,
+          "name" : "Region",
+          "sensitive" : false
+        },
+        "Secret Key" : {
+          "displayName" : "Secret Key",
+          "identifiesControllerService" : false,
+          "name" : "Secret Key",
+          "sensitive" : false
+        },
+        "Credentials File" : {
+          "displayName" : "Credentials File",
+          "identifiesControllerService" : false,
+          "name" : "Credentials File",
+          "sensitive" : false
+        },
+        "proxy-user-name" : {
+          "displayName" : "Proxy Username",
+          "identifiesControllerService" : false,
+          "name" : "proxy-user-name",
+          "sensitive" : false
+        },
+        "min-age" : {
+          "displayName" : "Minimum Object Age",
+          "identifiesControllerService" : false,
+          "name" : "min-age",
+          "sensitive" : false
+        },
+        "Proxy Host Port" : {
+          "displayName" : "Proxy Host Port",
+          "identifiesControllerService" : false,
+          "name" : "Proxy Host Port",
+          "sensitive" : false
+        },
+        "use-versions" : {
+          "displayName" : "Use Versions",
+          "identifiesControllerService" : false,
+          "name" : "use-versions",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "300 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.aws.s3.ListS3",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "variables" : {
+      "v_Target_S3_Folder" : "arun_test/output/",
+      "v_Target_S3_Folder_Log" : "ftp-input/log/",
+      "v_S3_Source_Bucket" : "datalabpoct2",
+      "v_Source_S3_Folder" : "arun_test/input/",
+      "v_S3_Target_Bucket" : "datalabpoct2",
+      "v_Filename" : "testjsontocsv.csv"
+    }
+  }
+}
