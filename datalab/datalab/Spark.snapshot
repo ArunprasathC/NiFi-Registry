@@ -1,0 +1,647 @@
+{
+  "header" : {
+    "dataModelVersion" : "2"
+  },
+  "content" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+        "id" : "4730963c-ea0e-3a5c-9f40-cae15493aa26",
+        "name" : "ExecuteSparkInteractive",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "833181b5-670f-366b-b52a-5cf0a738b0fa",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+        "id" : "89418f34-bfa7-379d-8aeb-b40e49cebbbb",
+        "name" : "GenerateFlowFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+        "id" : "eadbadff-44a4-3241-8d47-ca0b6e445fa6",
+        "name" : "ExecuteSparkInteractive",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "71aba836-f60c-3853-a042-2f3be7c78076",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+        "id" : "7ad16538-f0a3-386b-a197-1f2fe4c6f5a6",
+        "name" : "GenerateFlowFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+        "id" : "1774b0a5-e888-375d-9f04-02f67a2cb8e4",
+        "name" : "LogAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "0a239665-839e-333a-8b16-b8073bfaf20e",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+        "id" : "eadbadff-44a4-3241-8d47-ca0b6e445fa6",
+        "name" : "ExecuteSparkInteractive",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+        "id" : "0e10665f-8b95-3d3b-8b01-543c5e7cdb86",
+        "name" : "LogAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "f38114e8-921d-379b-afd0-1f07e8f434c4",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+        "id" : "4730963c-ea0e-3a5c-9f40-cae15493aa26",
+        "name" : "ExecuteSparkInteractive",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ {
+      "bundle" : {
+        "artifact" : "nifi-livy-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-livy-controller-service-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "1.8.0.3.3.1.0-10"
+        },
+        "type" : "org.apache.nifi.controller.api.livy.LivySessionService"
+      } ],
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "b5db834b-8087-3673-9aa3-af944a5fdb1e",
+      "name" : "LivySessionController",
+      "properties" : {
+        "Connection Timeout" : "100 secs",
+        "livy-cs-livy-host" : "ec2-99-80-218-204.eu-west-1.compute.amazonaws.com",
+        "livy-cs-session-pool-size" : "2",
+        "livy-cs-session-kind" : "spark",
+        "livy-cs-livy-port" : "8999",
+        "livy-cs-session-manager-status-interval" : "2 sec"
+      },
+      "propertyDescriptors" : {
+        "Connection Timeout" : {
+          "displayName" : "Connection Timeout",
+          "identifiesControllerService" : false,
+          "name" : "Connection Timeout",
+          "sensitive" : false
+        },
+        "livy-cs-livy-host" : {
+          "displayName" : "Livy Host",
+          "identifiesControllerService" : false,
+          "name" : "livy-cs-livy-host",
+          "sensitive" : false
+        },
+        "kerberos-credentials-service" : {
+          "displayName" : "Kerberos Credentials Service",
+          "identifiesControllerService" : true,
+          "name" : "kerberos-credentials-service",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "livy-cs-session-pool-size" : {
+          "displayName" : "Session Pool Size",
+          "identifiesControllerService" : false,
+          "name" : "livy-cs-session-pool-size",
+          "sensitive" : false
+        },
+        "livy-cs-session-jars" : {
+          "displayName" : "Session JARs",
+          "identifiesControllerService" : false,
+          "name" : "livy-cs-session-jars",
+          "sensitive" : false
+        },
+        "livy-cs-session-kind" : {
+          "displayName" : "Session Type",
+          "identifiesControllerService" : false,
+          "name" : "livy-cs-session-kind",
+          "sensitive" : false
+        },
+        "livy-cs-livy-port" : {
+          "displayName" : "Livy Port",
+          "identifiesControllerService" : false,
+          "name" : "livy-cs-livy-port",
+          "sensitive" : false
+        },
+        "livy-cs-session-files" : {
+          "displayName" : "Session Files",
+          "identifiesControllerService" : false,
+          "name" : "livy-cs-session-files",
+          "sensitive" : false
+        },
+        "livy-cs-session-manager-status-interval" : {
+          "displayName" : "Session Manager Status Interval",
+          "identifiesControllerService" : false,
+          "name" : "livy-cs-session-manager-status-interval",
+          "sensitive" : false
+        }
+      },
+      "type" : "org.apache.nifi.controller.livy.LivySessionController"
+    } ],
+    "funnels" : [ ],
+    "identifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "name" : "Spark_Connector",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : 1084.603112440843,
+      "y" : 1123.8487487206091
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ "wait", "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-livy-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "eadbadff-44a4-3241-8d47-ca0b6e445fa6",
+      "name" : "ExecuteSparkInteractive",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1013.2755293147115,
+        "y" : 1103.6876987561154
+      },
+      "properties" : {
+        "exec-spark-iactive-status-check-interval" : "1 sec",
+        "exec-spark-iactive-livy-controller-service" : "b5db834b-8087-3673-9aa3-af944a5fdb1e",
+        "exec-spark-iactive-charset" : "UTF-8",
+        "exec-spark-iactive-code" : "val file = sc.textFile(\"/home/satish/test\")\nval counts = file.flatMap(line => line.split(\" \")).map(word => (word,1)).reduceByKey(_ + _)\ncounts.saveAsTextFile(\"/home/satish/test/count1.txt\")"
+      },
+      "propertyDescriptors" : {
+        "exec-spark-iactive-status-check-interval" : {
+          "displayName" : "Status Check Interval",
+          "identifiesControllerService" : false,
+          "name" : "exec-spark-iactive-status-check-interval",
+          "sensitive" : false
+        },
+        "exec-spark-iactive-livy-controller-service" : {
+          "displayName" : "Livy Controller Service",
+          "identifiesControllerService" : true,
+          "name" : "exec-spark-iactive-livy-controller-service",
+          "sensitive" : false
+        },
+        "exec-spark-iactive-charset" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "exec-spark-iactive-charset",
+          "sensitive" : false
+        },
+        "exec-spark-iactive-code" : {
+          "displayName" : "Code",
+          "identifiesControllerService" : false,
+          "name" : "exec-spark-iactive-code",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.livy.ExecuteSparkInteractive",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "1774b0a5-e888-375d-9f04-02f67a2cb8e4",
+      "name" : "LogAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 961.2025939925636,
+        "y" : 1436.7273307592254
+      },
+      "properties" : {
+        "character-set" : "UTF-8",
+        "Log Level" : "info",
+        "attributes-to-log-regex" : ".*",
+        "Log Payload" : "false"
+      },
+      "propertyDescriptors" : {
+        "Log prefix" : {
+          "displayName" : "Log prefix",
+          "identifiesControllerService" : false,
+          "name" : "Log prefix",
+          "sensitive" : false
+        },
+        "character-set" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "character-set",
+          "sensitive" : false
+        },
+        "Log Level" : {
+          "displayName" : "Log Level",
+          "identifiesControllerService" : false,
+          "name" : "Log Level",
+          "sensitive" : false
+        },
+        "attributes-to-ignore-regex" : {
+          "displayName" : "Attributes to Ignore by Regular Expression",
+          "identifiesControllerService" : false,
+          "name" : "attributes-to-ignore-regex",
+          "sensitive" : false
+        },
+        "Attributes to Ignore" : {
+          "displayName" : "Attributes to Ignore",
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Ignore",
+          "sensitive" : false
+        },
+        "Attributes to Log" : {
+          "displayName" : "Attributes to Log",
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Log",
+          "sensitive" : false
+        },
+        "attributes-to-log-regex" : {
+          "displayName" : "Attributes to Log by Regular Expression",
+          "identifiesControllerService" : false,
+          "name" : "attributes-to-log-regex",
+          "sensitive" : false
+        },
+        "Log Payload" : {
+          "displayName" : "Log Payload",
+          "identifiesControllerService" : false,
+          "name" : "Log Payload",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.LogAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "7ad16538-f0a3-386b-a197-1f2fe4c6f5a6",
+      "name" : "GenerateFlowFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1526.6999514629338,
+        "y" : 1029.003181080527
+      },
+      "properties" : {
+        "character-set" : "UTF-8",
+        "File Size" : "0B",
+        "generate-ff-custom-text" : "Hello,",
+        "Batch Size" : "1",
+        "Unique FlowFiles" : "false",
+        "Data Format" : "Text"
+      },
+      "propertyDescriptors" : {
+        "character-set" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "character-set",
+          "sensitive" : false
+        },
+        "File Size" : {
+          "displayName" : "File Size",
+          "identifiesControllerService" : false,
+          "name" : "File Size",
+          "sensitive" : false
+        },
+        "generate-ff-custom-text" : {
+          "displayName" : "Custom Text",
+          "identifiesControllerService" : false,
+          "name" : "generate-ff-custom-text",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Unique FlowFiles" : {
+          "displayName" : "Unique FlowFiles",
+          "identifiesControllerService" : false,
+          "name" : "Unique FlowFiles",
+          "sensitive" : false
+        },
+        "Data Format" : {
+          "displayName" : "Data Format",
+          "identifiesControllerService" : false,
+          "name" : "Data Format",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "60 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "89418f34-bfa7-379d-8aeb-b40e49cebbbb",
+      "name" : "GenerateFlowFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 342.8206454923763,
+        "y" : -45.06992491735633
+      },
+      "properties" : {
+        "character-set" : "UTF-8",
+        "File Size" : "0B",
+        "generate-ff-custom-text" : "Hello, welcome to the spark world.",
+        "Batch Size" : "1",
+        "Unique FlowFiles" : "false",
+        "Data Format" : "Text"
+      },
+      "propertyDescriptors" : {
+        "character-set" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "character-set",
+          "sensitive" : false
+        },
+        "File Size" : {
+          "displayName" : "File Size",
+          "identifiesControllerService" : false,
+          "name" : "File Size",
+          "sensitive" : false
+        },
+        "generate-ff-custom-text" : {
+          "displayName" : "Custom Text",
+          "identifiesControllerService" : false,
+          "name" : "generate-ff-custom-text",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Unique FlowFiles" : {
+          "displayName" : "Unique FlowFiles",
+          "identifiesControllerService" : false,
+          "name" : "Unique FlowFiles",
+          "sensitive" : false
+        },
+        "Data Format" : {
+          "displayName" : "Data Format",
+          "identifiesControllerService" : false,
+          "name" : "Data Format",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "500 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "0e10665f-8b95-3d3b-8b01-543c5e7cdb86",
+      "name" : "LogAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 330.9311496427669,
+        "y" : 462.97833004937957
+      },
+      "properties" : {
+        "character-set" : "UTF-8",
+        "Log Level" : "info",
+        "attributes-to-log-regex" : ".*",
+        "Log Payload" : "false"
+      },
+      "propertyDescriptors" : {
+        "Log prefix" : {
+          "displayName" : "Log prefix",
+          "identifiesControllerService" : false,
+          "name" : "Log prefix",
+          "sensitive" : false
+        },
+        "character-set" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "character-set",
+          "sensitive" : false
+        },
+        "Log Level" : {
+          "displayName" : "Log Level",
+          "identifiesControllerService" : false,
+          "name" : "Log Level",
+          "sensitive" : false
+        },
+        "attributes-to-ignore-regex" : {
+          "displayName" : "Attributes to Ignore by Regular Expression",
+          "identifiesControllerService" : false,
+          "name" : "attributes-to-ignore-regex",
+          "sensitive" : false
+        },
+        "Attributes to Ignore" : {
+          "displayName" : "Attributes to Ignore",
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Ignore",
+          "sensitive" : false
+        },
+        "Attributes to Log" : {
+          "displayName" : "Attributes to Log",
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Log",
+          "sensitive" : false
+        },
+        "attributes-to-log-regex" : {
+          "displayName" : "Attributes to Log by Regular Expression",
+          "identifiesControllerService" : false,
+          "name" : "attributes-to-log-regex",
+          "sensitive" : false
+        },
+        "Log Payload" : {
+          "displayName" : "Log Payload",
+          "identifiesControllerService" : false,
+          "name" : "Log Payload",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.LogAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "wait", "success" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-livy-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.8.0.3.3.1.0-10"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "81e0e6fc-fd9d-3419-bd01-6a60de37cd4c",
+      "identifier" : "4730963c-ea0e-3a5c-9f40-cae15493aa26",
+      "name" : "ExecuteSparkInteractive",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 915.1550876310482,
+        "y" : 215.02039853082482
+      },
+      "properties" : {
+        "exec-spark-iactive-status-check-interval" : "1 sec",
+        "exec-spark-iactive-livy-controller-service" : "b5db834b-8087-3673-9aa3-af944a5fdb1e",
+        "exec-spark-iactive-charset" : "UTF-8",
+        "exec-spark-iactive-code" : "val file = sc.textFile(\"/tmp/humpty\")\nval counts = file.flatMap(line => line.split(\" \")).map(word => (word,1)).reduceByKey(_ + _)\ncounts.saveAsTextFile(\"/tmp/humpty/NiFiWordCount2\")"
+      },
+      "propertyDescriptors" : {
+        "exec-spark-iactive-status-check-interval" : {
+          "displayName" : "Status Check Interval",
+          "identifiesControllerService" : false,
+          "name" : "exec-spark-iactive-status-check-interval",
+          "sensitive" : false
+        },
+        "exec-spark-iactive-livy-controller-service" : {
+          "displayName" : "Livy Controller Service",
+          "identifiesControllerService" : true,
+          "name" : "exec-spark-iactive-livy-controller-service",
+          "sensitive" : false
+        },
+        "exec-spark-iactive-charset" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "exec-spark-iactive-charset",
+          "sensitive" : false
+        },
+        "exec-spark-iactive-code" : {
+          "displayName" : "Code",
+          "identifiesControllerService" : false,
+          "name" : "exec-spark-iactive-code",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.livy.ExecuteSparkInteractive",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "variables" : { }
+  }
+}
