@@ -11,7 +11,7 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "comments" : "",
+        "comments" : "Version check",
         "groupId" : "a1ac9a27-1d25-340f-b1e5-b45d421cbb55",
         "id" : "1f37830b-f171-3603-bdaa-98ceb63ccd08",
         "name" : "PutS3Object",
@@ -204,7 +204,7 @@
         "group" : "org.apache.nifi",
         "version" : "1.8.0.3.3.1.0-10"
       },
-      "comments" : "",
+      "comments" : "Version check",
       "componentType" : "PROCESSOR",
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
